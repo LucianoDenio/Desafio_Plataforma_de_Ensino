@@ -21,6 +21,8 @@ public class Program {
 		System.out.print("Quantas aulas tem o curso? ");
 		int n =sc.nextInt();
 		
+		System.out.println();
+		
 		for(int i=1;i<=n;i++) {
 			System.out.println("Dados da "+i+"a aula:");
 			System.out.print("Conteúdo ou tarefa (c/t)? ");
@@ -38,30 +40,22 @@ public class Program {
 			else {
 				System.out.print("Descrição: ");
 				String description = sc.nextLine();
-				System.out.println("Quantidade de questões? ");
+				System.out.print("Quantidade de questões? ");
 				int questions = sc.nextInt();
 				list.add(new Task(title, description, questions));
 			}
+			System.out.println();
 
 		}
 		
-		
 		int sum = 0;
+		
 		for(Lesson lesson : list) {
 			sum += lesson.duration();
 		}
 		
-		System.out.println();
-		System.out.printf("DURAÇÃO TOTAL DO CURSO = %.2f segundos",sum);
-		
-		
-		
-		
-		
-		
-		
-		
-		
+		System.out.println("DURAÇÃO TOTAL DO CURSO = "+sum+" segundos");
+
 		sc.close();
 
 	}
